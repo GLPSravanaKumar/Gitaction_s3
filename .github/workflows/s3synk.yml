@@ -21,4 +21,4 @@ jobs:
           aws-region: 'ap-south-1'
 
       - name: Upload Files to S3
-        run: aws s3 cp ./Newfolder/ s3://glps-terraform-state-bucket/ --recursive
+        run: aws s3 cp /C/Users/Naga/Downloads/Newfolder/ s3://glps-terraform-state-bucket/ --recursive
