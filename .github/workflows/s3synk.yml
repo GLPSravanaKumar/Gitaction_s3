@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
@@ -19,8 +19,8 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: 'ap-south-1'
+      - name: Copy files to working directory
+        run: cp -r "/c/Users/Naga/Downloads/Newfolder/s3/" .
 
       - name: Upload Files to S3
-        run: | 
-            aws s3 cp "C:\Users\Naga\Downloads\Newfolder\s3" s3://glps-terraform-state-bucket/ --recursive
-        shell: powershell
+        run: aws s3 cp "New folder/" s3://glps-terraform-state-bucket/ --recursive
