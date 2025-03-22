@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout Repository
@@ -21,4 +21,5 @@ jobs:
           aws-region: 'ap-south-1'
 
       - name: Upload Files to S3
-        run: aws s3 sync s3/ s3://glps-terraform-state-bucket/ --acl public-read
+        run: aws s3 sync "C:\Users\Naga\Downloads\Newfolder\s3" s3://glps-terraform-state-bucket/ --acl public-read
+        shell: powershell
